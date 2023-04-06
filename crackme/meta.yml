@@ -1,0 +1,34 @@
+name: Find me!
+description: |
+  This CTF needs you to know the following:
+
+    - Encryption techniques.
+    - Basic JS skills.
+
+  You will be presented with a web interface written in PHP and ReactJS,
+  this interface allows you to enter any value and it will be compared against the flag! Your task will be to try and crack that flag!
+  
+  **Connection Instructions**:
+  
+  Do the following:
+
+  $ `ssh -L localhost:<local port>:container_ip:container_port -p 56151 <username>@cs561.cs.umass.edu`
+  
+  For example, run
+
+  $ `ssh -L localhost:8080:172.20.26.4:80 -p 56151 user@cs561.cs.umass.edu`
+
+  This will forward the local port 8080 on your machine to 172.20.26.4:80 on the swarm network, where this challenge is hosted.
+
+  Know you just need to open `localhost:<local port>` on you web browser.
+
+  **Note**:
+
+  It is recommended that you try the challenge on Google Chrome.
+
+value: 200
+category: Reverse Engineering
+flag: F|@9_(raCK_M3#571
+
+# administrative
+container_name: ahashesh-ctf-crackme
