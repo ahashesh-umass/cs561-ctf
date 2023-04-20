@@ -2,27 +2,17 @@ version: '1.0.0'
 services:
   ahashesh-ctf-findme:
     container_name: ahashesh-ctf-findme
-    build:
-      dockerfile: Dockerfile
-      context: ./
+    image: php:8.2.4-apache
     ports:
     - '3000:80'
     networks:
       nw0:
-    command:
-    - /bin/bash
-    - -c
-    - |
-      apache2-foreground &
-      ./start_nc.sh
-      
+    command: bash -c "a2enmod rewrite && a2enmod headers && a2enconf docker-apache2; apache2-foreground"
     volumes:
     - ./app:/var/www/html/app
     - ./public_html:/var/www/html/public_html
-    # - ./apache_config/000-default.conf:/etc/apache2/sites-available/000-default.conf
-    # - ./apache_config/apache2.conf:/etc/apache2/conf-available/docker-apache2.conf
-    # - ./flag.txt:/var/www/html/flag.txt
-    # - ./start_nc.sh:/var/www/html/start_nc.sh
+    - ./apache_config/000-default.conf:/etc/apache2/sites-available/000-default.conf
+    - ./apache_config/apache2.conf:/etc/apache2/conf-available/docker-apache2.conf
 
 networks:
   nw0:
