@@ -2,12 +2,14 @@ version: '1.0'
 services:
   ahashesh-ctf-crackme:
     container_name: ahashesh-ctf-crackme
-    image: php:8.2.4-apache
+    build:
+      dockerfile: Dockerfile
+      context: ./
     ports:
     - '3000:80'
     networks:
       nw0:
-    command: bash -c "a2enmod rewrite && a2enmod headers && a2enconf docker-apache2; apache2-foreground"
+    command: bash -c "apache2-foreground"
     volumes:
     - ./app:/var/www/html/app
     - ./public_html:/var/www/html/public_html
