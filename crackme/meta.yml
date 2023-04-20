@@ -16,9 +16,9 @@ description: |
   
   For example, run
 
-  $ `ssh -L localhost:8080:172.20.26.4:80 -p 56151 user@cs561.cs.umass.edu`
+  $ `ssh -L localhost:8080:ahashesh-ctf-crackme:80 -p 56151 user@cs561.cs.umass.edu`
 
-  This will forward the local port 8080 on your machine to 172.20.26.4:80 on the swarm network, where this challenge is hosted.
+  This will forward the local port 8080 on your machine to ahashesh-ctf-crackme:80 on the swarm network, where this challenge is hosted.
 
   Know you just need to open `localhost:<local port>` on you web browser.
 
