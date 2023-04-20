@@ -9,12 +9,6 @@ services:
     - '3000:80'
     networks:
       nw0:
-    command: bash -c "apache2-foreground"
-    volumes:
-    - ./app:/var/www/html/app
-    - ./public_html:/var/www/html/public_html
-    - ./apache_config/000-default.conf:/etc/apache2/sites-available/000-default.conf
-    - ./apache_config/apache2.conf:/etc/apache2/conf-available/docker-apache2.conf
 
 networks:
   nw0:
